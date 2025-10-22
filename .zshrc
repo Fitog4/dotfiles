@@ -103,3 +103,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=/home/filippo/.cfg/ --work-tree=/home/filippo'
+export JAVA_HOME=/home/filippo/.jdks/openjdk-25
+export PATH=$JAVA_HOME/bin:$PATH

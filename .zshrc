@@ -105,3 +105,27 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=/home/filippo/.cfg/ --work-tree=/home/filippo'
 export JAVA_HOME=/home/filippo/.jdks/openjdk-25
 export PATH=$JAVA_HOME/bin:$PATH
+
+kb_apple() {
+  gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swap_lwin_lctl']"
+}
+
+kb_lenovo() {
+  gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swap_lalt_lctl', 'altwin:swap_lalt_lwin']"
+}
+
+# Created by `pipx` on 2025-12-03 10:07:28
+export PATH="$PATH:/home/filippo/.local/bin"
+
+export DOCKER_BUILDKIT=1
+
+# From this check onwards, this only runs inside interactive shells, so not from within scripts
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Auto-start tmux on terminal launch
+if [ -z "$TMUX" ] && command -v tmux >/dev/null 2>&1; then
+    tmux
+fi
